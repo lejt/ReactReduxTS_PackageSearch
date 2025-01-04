@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useActions } from '../hooks/useActions';
-import { useSelector } from 'react-redux';
+import { useTypedSelector } from '../hooks/useTypedSelector';
 
 export const RepositoriesList: React.FC = () => {
   const [term, setTerm] = useState('');
   const { searchRepositories } = useActions();
-  const { data, error, loading } = useSelector(
+  const { data, error, loading } = useTypedSelector(
     (state) => state.repositories
   );
 
